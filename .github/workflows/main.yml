@@ -63,11 +63,3 @@ jobs:
         with:
           name: mono-ynab-bridge-webapp-release-build.zip
           path: mono-ynab-bridge-webapp-release-build.zip
-      # Make official GitHub release which will trigger
-      # sending the mail with link for access
-      - name: Release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: mono-ynab-bridge-webapp-release-build.zip
-          body: https://mono-ynab-bridge-webapp-bucket.s3.eu-central-1.amazonaws.com/index.html
-          token: ${{ secrets.GITHUB_TOKEN }}
