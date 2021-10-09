@@ -38,7 +38,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
       - name: Deploy to S3
-        run: aws s3 sync . s3:////mono-ynab-bridge-webapp-bucket --acl public-read
+        run: aws s3 sync . s3://mono-ynab-bridge-webapp-bucket --acl public-read
         working-directory: mono-ynab-bridge-webapp-build
   release:
     runs-on: ubuntu-latest
