@@ -69,5 +69,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: mono-ynab-bridge-webapp-release-build.zip
-          body: https:////mono-ynab-bridge-webapp-bucket.s3.amazonaws.com/index.html
+          body: https://mono-ynab-bridge-webapp-bucket.s3.eu-central-1.amazonaws.com/index.html
           token: ${{ secrets.GITHUB_TOKEN }}
