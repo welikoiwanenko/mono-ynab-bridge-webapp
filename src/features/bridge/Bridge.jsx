@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
 import Carousel from './components/Carousel';
 
 
