@@ -1,8 +1,8 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Bridge } from './features/bridge/Bridge';
+import Box from '@mui/material/Box';
+import Bridge from './features/bridge/Bridge';
 import './App.css';
-import Box from "@mui/material/Box";
 
 const theme = createTheme({
   palette: {
@@ -29,7 +29,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ height: '58px', width: '100%', background: 'linear-gradient(#673AAC, #A835E1);' }}/>
+      <Box sx={{ height: '58px', width: '100%', background: 'linear-gradient(#673AAC, #A835E1);' }} />
       <Bridge />
     </ThemeProvider>
   );

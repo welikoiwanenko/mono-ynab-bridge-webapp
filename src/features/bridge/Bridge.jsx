@@ -4,7 +4,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Carousel from './components/Carousel';
 
-
 import {
   selectAccount,
   selectAccountLoading,
@@ -16,7 +15,7 @@ import {
   getMonoTransactionsData,
 } from './transactionSlice';
 
-export function Bridge() {
+export default function Bridge() {
   const [loading, setLoading] = React.useState(false);
   const account = useSelector(selectAccount);
   const transactions = useSelector(selectTransactions);
@@ -28,7 +27,7 @@ export function Bridge() {
     if (!account) {
       // dispatch(getMonoAccountData());
     }
-  }, [account, dispatch])
+  }, [account, dispatch]);
 
   useEffect(() => {
     if (!transactions) {
@@ -38,18 +37,20 @@ export function Bridge() {
 
   useEffect(() => {
     setLoading(isAccountLoading || isTransactionsLoading);
-  }, [isAccountLoading, isTransactionsLoading])
+  }, [isAccountLoading, isTransactionsLoading]);
 
   return (
     <div className="wrapper">
-      {loading &&
-        <Box sx={{display: 'flex'}}>
-          <CircularProgress sx={{color: 'black'}}/>
-        </Box>
-      }
-      {!loading &&
-        <Carousel items={transactions || []}/>
-      }
+      {loading
+        && (
+          <Box sx={{ display: 'flex' }}>
+            <CircularProgress sx={{ color: 'black' }} />
+          </Box>
+        )}
+      {!loading
+        && (
+          <Carousel items={transactions || []} />
+        )}
     </div>
   );
 }
